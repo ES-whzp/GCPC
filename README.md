@@ -9,8 +9,8 @@ GCPC (GC content and PAM Calculation), is a tool for calculating the GC content 
 
 optional arguments:
 
--h, --help         show this help message and exit
+-h, --help,         show this help message and exit
 
--d , --genomeDir   The directory that store the genome files (only support '.fasta' format)
+-d , --genomeDir,   The directory that store the genome files (only support '.fasta' format)
 
--o , --output      The output fileName (default name is 'GCPC_output)'. The output is under the genome directory.
+-o , --output,      The output fileName (default name is 'GCPC_output)'. The output is under the genome directory.
