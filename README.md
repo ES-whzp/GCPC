@@ -13,4 +13,4 @@ optional arguments:
 
 -d , --genomeDir,   The directory that store the genome files (only support '.fasta' format)
 
--o , --output,      The output fileName (default name is 'GCPC_output'). The output is under the genome directory.
+-o , --output,      The output fileName (default name is 'GCPC_output'). The output is saved under the genome directory.
