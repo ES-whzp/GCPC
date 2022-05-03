@@ -59,9 +59,9 @@ def mainStep(fastaDir, savePath):
     print('Complete Calculation')
 
 
-parser = argparse.ArgumentParser(description="GCPC (GC content and PAM Calculation), is a tool for calculating the GC content and PAM count in different strains.\n\t\n\tThe tool support five types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', and 'NGG'.\n\tThe output format is '.csv'. \n\t\n\tIf you demand other PAMs calculation, please mailto: wangzhp@shanghaitech.edu.cn", formatter_class=argparse.RawDescriptionHelpFormatter)
+parser = argparse.ArgumentParser(description="GCPC (GC content and PAMs count Calculation), is a tool for calculating the GC content and PAM count in different strains.\n\t\n\tThe tool support five types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', and 'NGG'.\n\tThe output format is '.csv'. \n\t\n\tIf you demand other PAMs calculation, please mailto: wangzhp@shanghaitech.edu.cn", formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument('-d', '--genomeDir', nargs=1, metavar='', help="The directory that store the genome files (only support '.fasta' format)", type=str)
-parser.add_argument('-o', '--output', nargs=1, default='GCPC_output', metavar='', help="The output fileName (default name is 'GCPC_output)'. The output is under the genome directory.", type=str)
+parser.add_argument('-o', '--output', nargs=1, default='GCPC_output', metavar='', help="The output fileName (default name is 'GCPC_output'). The output is saved under the genome directory.", type=str)
 
 
 if __name__ == '__main__':
