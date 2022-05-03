@@ -1,6 +1,6 @@
 # GCPC
 
-GCPC (GC content and PAM Calculation), is a tool for calculating the GC content and PAM count in different strains.
+GCPC (GC content and PAMs count Calculation), is a tool for calculating the GC content and PAM count in different strains.
 
         The tool support five types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', and 'NGG'.
         The output format is '.csv'.
