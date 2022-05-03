@@ -12,16 +12,18 @@ def GCcount(seqUp):
 
 def countPAM(seqUp):
     PAMcountDic = dict()
-    for i in range(len(seqUp)-3):
+    seqUp += seqUp[:3]
+    for i in range(len(seqUp) -3):
         if ((seqUp[i] == 'G' or seqUp[i] == 'T') and (seqUp[i+1] == 'C' or seqUp[i+1] == 'T') and seqUp[i+2] == 'T' and (seqUp[i+3] == 'A' or seqUp[i+3] == 'C' or seqUp[i+3] == 'G')) \
         or ((seqUp[i+3] == 'C' or seqUp[i+3] == 'A') and (seqUp[i+2] == 'G' or seqUp[i+2] == 'A') and seqUp[i+1] == 'A' and (seqUp[i] == 'T' or seqUp[i] == 'C' or seqUp[i] == 'G')) :
             PAMcountDic['KYTV'] = PAMcountDic.get('KYTV', 0) + 1
         if seqUp[i:i+2] == 'GG' or seqUp[i:i+2] == 'CC':
             PAMcountDic['NGG'] = PAMcountDic.get('NGG', 0) + 1
-        if ((seqUp[i] == 'C' or seqUp[i] == 'T') and seqUp[i+1] == 'T') or (seqUp[i+1] == 'A' or (seqUp[i] == 'G' or seqUp[i] == 'A')):
+        if ((seqUp[i] == 'C' or seqUp[i] == 'T') and seqUp[i+1] == 'T') \
+        or ((seqUp[i] == 'G' or seqUp[i] == 'A') and seqUp[i+1] == 'A'):
             PAMcountDic['YTN'] = PAMcountDic.get('YTN', 0) + 1
         if ((seqUp[i] == 'G' or seqUp[i] == 'T') and (seqUp[i+1: i+3] == 'TT') and (seqUp[i+3] == 'A' or seqUp[i+3] == 'C' or seqUp[i+3] == 'G')) \
-               or ((seqUp[i+3] == 'C' or seqUp[i+3] == 'A') and (seqUp[i+1: i+3] == 'AA') and (seqUp[i] == 'A' or seqUp[i] == 'C' or seqUp[i] == 'G')):
+        or ((seqUp[i+3] == 'C' or seqUp[i+3] == 'A') and (seqUp[i+1: i+3] == 'AA') and (seqUp[i] == 'T' or seqUp[i] == 'G' or seqUp[i] == 'C')):
             PAMcountDic['KTTV'] = PAMcountDic.get('KTTV', 0) + 1
         if seqUp[i:i+2] == 'TT' or seqUp[i:i+2] == 'AA':
             PAMcountDic['TTN'] = PAMcountDic.get('TTN', 0) + 1
