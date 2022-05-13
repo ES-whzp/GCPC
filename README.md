@@ -5,10 +5,10 @@ If you demand other PAMs calculation, please mailto: [wangzhp@shanghaitech.edu.c
 
 **usage**:
 
-```kotlin
+```bash
  python GCPC.py [-h] [-d] [-o]
  -h --help, show this help message and exit.
- -d --genomeDir, The directory that store the fasta-format genome files.
+ -d --genomeDir, The directory that stores the fasta-format genome files.
  -o --output, The output fileName (default name is 'GCPC_output'). The output is saved under the genome directory.
 ```
 
