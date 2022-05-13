@@ -25,6 +25,9 @@ def countPAM(seqUp):
         if ((seqUp[i] == 'G' or seqUp[i] == 'T') and (seqUp[i+1: i+3] == 'TT') and (seqUp[i+3] == 'A' or seqUp[i+3] == 'C' or seqUp[i+3] == 'G')) \
         or ((seqUp[i+3] == 'C' or seqUp[i+3] == 'A') and (seqUp[i+1: i+3] == 'AA') and (seqUp[i] == 'T' or seqUp[i] == 'G' or seqUp[i] == 'C')):
             PAMcountDic['KTTV'] = PAMcountDic.get('KTTV', 0) + 1
+        if ((seqUp[i] == 'A') and (seqUp[i+1: i+3] == 'TT') and (seqUp[i+3] == 'C')) \
+        or ((seqUp[i+3] == 'T') and (seqUp[i+1: i+3] == 'AA') and (seqUp[i] == 'G')):
+            PAMcountDic['ATTC'] = PAMcountDic.get('ATTC', 0) + 1
         if seqUp[i:i+2] == 'TT' or seqUp[i:i+2] == 'AA':
             PAMcountDic['TTN'] = PAMcountDic.get('TTN', 0) + 1
     return PAMcountDic
@@ -33,7 +36,7 @@ def countPAM(seqUp):
 def mainStep(fastaDir, savePath):
     seq = ''
     f = open(savePath, 'w', newline='')
-    rowNameLst = ['Strain', 'GC%', 'TTN',  'YTN', 'KYTV', 'KTTV', 'NGG']
+    rowNameLst = ['Strain', 'GC%', 'TTN',  'YTN', 'KYTV', 'KTTV', 'ATTC', 'NGG']
     fCsv = csv.writer(f)
     fCsv.writerow(rowNameLst)
     print('Start Calculating...')
@@ -61,8 +64,8 @@ def mainStep(fastaDir, savePath):
     print('Complete Calculation')
 
 
-parser = argparse.ArgumentParser(description="GCPC (GC content and PAMs count Calculation), is a tool for calculating the GC content and PAM count in different strains.\n\t\n\tThe tool support five types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', and 'NGG'.\n\tThe output format is '.csv'. \n\t\n\tIf you demand other PAMs calculation, please mailto: wangzhp@shanghaitech.edu.cn", formatter_class=argparse.RawDescriptionHelpFormatter)
-parser.add_argument('-d', '--genomeDir', nargs=1, metavar='', help="The directory that store the genome files (only support '.fasta' format)", type=str)
+parser = argparse.ArgumentParser(description="GCPC (GC content and PAMs count Calculation), is a tool for calculating the GC content and PAM count in different strains.\n\t\n\tThe tool supports six types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', 'ATTC', and 'NGG'.'. \n\t\n\tIf you demand other PAMs calculation, please mailto: wangzhp@shanghaitech.edu.cn", formatter_class=argparse.RawDescriptionHelpFormatter)
+parser.add_argument('-d', '--genomeDir', nargs=1, metavar='', help="The directory that stores the fasta-format genome files.", type=str)
 parser.add_argument('-o', '--output', nargs=1, default='GCPC_output', metavar='', help="The output fileName (default name is 'GCPC_output'). The output is saved under the genome directory.", type=str)
 
 
