@@ -3,9 +3,10 @@
 The tool support six types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', 'ATTC', and 'NGG'.
 If you demand other PAMs calculation, please mailto: [wangzhp@shanghaitech.edu.cn](mailto:wangzhp@shanghaitech.edu.cn)
 
-**usage**: python GCPC.py [-h] [-d] [-o]
+**usage**:
 
 ```kotlin
+ python GCPC.py [-h] [-d] [-o]
  -h --help, show this help message and exit.
  -d --genomeDir, The directory that store the fasta-format genome files.
  -o --output, The output fileName (default name is 'GCPC_output'). The output is saved under the genome directory.
