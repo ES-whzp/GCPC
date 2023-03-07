@@ -3,7 +3,7 @@
 The tool supports six types of PAMs, including 'TTN', 'YTN', 'KYTV', 'KTTV', 'ATTC', and 'NGG'.
 
 
-**usage**:
+**Usage**:
 
 ```bash
  python GCPC.py [-h] [-d] [-o]
